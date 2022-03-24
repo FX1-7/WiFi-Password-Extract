@@ -1,0 +1,1 @@
+for /F "tokens=*" %%A in (out.txt) do (echo "%%A">>A.txt && netsh wlan show profile name="%%A" key=clear | findstr /c:"Network type" /c:"Authentication" /c:"Key Content" | findstr /v "broadcast" |findstr /v "Radio">>A.txt) = %%A
